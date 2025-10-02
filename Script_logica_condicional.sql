@@ -1,7 +1,0 @@
-
-SELECT MATRICULAS.ID_ALUNO AS 'ID Aluno',
-	CASE WHEN MATRICULAS.NOTA_FINAL >= '7.0'
-	     THEN 'Aprovado'
-	     ELSE 'Reprovado'
-	END AS 'Status'
-FROM MATRICULAS
