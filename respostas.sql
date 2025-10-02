@@ -1,22 +1,17 @@
 
 -- SQL I - 1.1 Consulta Geral
-
 SELECT * FROM ALUNOS;
 
 -- SQL I - 1.3  Filtro Numérico
-
 SELECT NOME_CURSO, CREDITOS
 	FROM CURSOS
-	WHERE CREDITOS > 4
-
+	WHERE CREDITOS > 4;
 
 -- SQL I - 2.1 Valores Únicos
-
 SELECT DISTINCT DEPARTAMENTO
 	FROM CURSOS;
 
 -- SQL I - 2.3 Ordenação e Limite
-
 SELECT 
 	c.NOME_CURSO AS 'Curso',
 	c.CREDITOS  AS 'Créditos'
@@ -24,13 +19,30 @@ FROM  CURSOS c
 ORDER BY CREDITOS DESC 
 LIMIT 1;
 
+-- SQL I - 2.2 Lógica Condicional
+SELECT MATRICULAS.ID_ALUNO AS 'ID Aluno',
+	CASE WHEN MATRICULAS.NOTA_FINAL >= '7.0'
+	     THEN 'Aprovado'
+	     ELSE 'Reprovado'
+	END AS 'Status'
+FROM MATRICULAS;
 
 -- SQL I - 3.2  Agrupamento
+SELECT 
+	DEPARTAMENTO AS 'Departamento',
+	COUNT(*) AS 'Qtde de Cursos'
+FROM CURSOS
+GROUP BY DEPARTAMENTO;
 
 -- SQL I - 3.3  Filtro de Grupo
+SELECT 
+	DEPARTAMENTO AS 'Departamento',
+	COUNT(*) AS 'Qtde de Cursos'
+FROM CURSOS
+GROUP BY DEPARTAMENTO
+HAVING COUNT(*) >1;
 
 -- SQL I - 4.1 Filtro de Desempenho	
-	
 SELECT
    ALUNOS.NOME_ALUNO AS NOME_ALUNO,
    CURSOS.CURSO AS NOME_CURSO,
