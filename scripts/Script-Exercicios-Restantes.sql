@@ -1,0 +1,33 @@
+-- 1.2 Consulta Específica
+SELECT 	
+	CURSOS.NOME_CURSO AS 'Curso',
+	CURSOS.DEPARTAMENTO AS 'Departamento Respónsavel'
+FROM CURSOS;
+
+-- SQL I - 1.4 Filtro de Data
+SELECT 
+	ALUNOS.NOME_ALUNO AS 'Nome de Aluno',
+	ALUNOS.EMAIL AS 'Email'
+FROM ALUNOS 
+WHERE ALUNOS.DATA_INGRESSO >= '2023-01-01';
+
+-- SQL I - 1.5 Filtro com AND e Ordenação
+SELECT 
+	A.NOME_ALUNO AS 'Nome do Aluno',
+	M.NOTA_FINAL AS 'Nota Final'
+FROM MATRICULAS	M
+JOIN ALUNOS A ON M.ID_ALUNO = A.ID_ALUNO 
+WHERE M.ID_ALUNO = 1 AND M.NOTA_FINAL >= 7.0
+ORDER BY M.NOTA_FINAL DESC;
+
+-- SQL I - 3.1 Contagem e Média
+SELECT 
+    COUNT(ID_MATRICULA) AS Total_Matriculas,
+    AVG(NOTA_FINAL) AS Media_Geral
+FROM MATRICULAS;
+
+-- SQL I - 4.2 Busca por Alunos sem Matrícula
+SELECT a.NOME_ALUNO AS 'Aluno sem Matrícula'
+FROM ALUNOS a 
+LEFT JOIN MATRICULAS m ON a.ID_ALUNO = m.ID_ALUNO
+WHERE m.ID_MATRICULA IS NULL;
