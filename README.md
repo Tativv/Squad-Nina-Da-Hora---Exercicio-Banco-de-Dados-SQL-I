@@ -38,9 +38,12 @@ O banco de dados foi usado para praticar consultas SQL em diferentes níveis:
 
 ## 🚀 Como usar
 1. Baixe o arquivo `DB_Universidade.db`.  
-2. Abra no [DBeaver](https://dbeaver.io/) ou outro cliente SQLite.  
-3. Execute as consultas SQL para praticar e testar o banco.
-
+   - Ele contém todas as tabelas do banco de dados, incluindo as respostas dos exercícios.  
+   - Você pode abrir no [DBeaver](https://dbeaver.io/) ou outro cliente SQLite para visualizar as tabelas e dados.  
+2. Baixe o arquivo `respostas.sql`.  
+   - Ele contém todas as respostas dos exercícios unificadas em um único script.  
+   - Ideal para quem quer ver rapidamente todas as respostas sem precisar executar as queries individualmente.
+     
 ## 👥 Equipe
 **Squad Nina Da Hora**  
 1. Bruna  de Avila Pospiesz
